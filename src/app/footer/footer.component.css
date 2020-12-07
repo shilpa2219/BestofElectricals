@@ -1,4 +1,4 @@
-  * {
+* {
     box-sizing: border-box;
   }
   .row{
@@ -21,17 +21,6 @@
       width: 100%;
     }
   }
-  .column a:link  {
-    font-size: medium;
-    text-decoration: none;
-  }
-  .link{
-    color: grey;
-  }
-  .flink{
-    color: darkcyan;
-  }
-  
-  .column a:hover{
-    color: rgb(20, 182, 20);
+  a:link{
+      text-decoration: none;
   }

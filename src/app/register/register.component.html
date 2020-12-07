@@ -1,61 +1,49 @@
-<div ><h2 style="font-size: 30px;margin-left: 250px;margin-bottom:10px ;margin-top:10px;">REGISTER</h2></div>
-
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-       
-         <label for="firstName">firstname</label>
-        <input type="text" formControlName="firstName" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
-        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-            <div *ngIf="f.firstName.errors.required">First Name is required</div>
+<mat-card class="my-card">
+    <h1 class="title">REGISTER</h1>
+    <mat-card-content>
+    <form class="registerForm">
+        <div class="card"
+    style="width: 100%; padding-left: 10%; padding-right: 10%;padding-top: 2%; background: white; border-color: white;">
+    <div class="row">
+      <div class="column" style="width: 50%;">
+        <label class="example-margin"><b>Your Personal Details:</b></label><br>
+       <mat-form-field class="full-width">
+              <input  matInput  placeholder="First name:"  name="fname"  required>
+           </mat-form-field><br>
+           <mat-form-field class="full-width">
+              <input  matInput  placeholder="Last Name:" name="lname"  required>
+           </mat-form-field><br>
+           <mat-form-field class="full-width">
+            <input type="email" matInput  placeholder="Email:" name="email" required>
+         </mat-form-field><br>
+            <label class="example-margin"><b>Your Contact Information:</b></label><br>
+           <mat-form-field class="full-width">
+              <input  matInput  placeholder="Mobile No.:" name="mobile"  required>
+           </mat-form-field><br>
         </div>
-     <div>
-        
-    <div class="form-group">
-        <label for="lastName">lastname</label>
-        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
-        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+        <div class="column" style="width: 50%; padding-left: 2%;">
+            <label class="example-margin"><b>Your Password:</b></label><br>
+           <mat-form-field class="full-width">
+              <input type="password" matInput  placeholder="Password:"  name="pswd" required>
+           </mat-form-field>
+           <br>
+           <mat-form-field class="full-width">
+            
+            <input type="password" matInput  placeholder="Confirm Password:"  name="cpswd" required>
+         </mat-form-field>
         </div>
+        <mat-card-actions>
+            <button mat-raised-button color="warn" (click)="register()">REGISTER</button>
+          
+          <br><br>
+          <label class="gateway">Quick login gateway</label><br>
+          
+            <button mat-raised-button color="warn" >LOGIN WITH GOOGLE</button>&nbsp;&nbsp;&nbsp;
+          <button mat-raised-button color="primary" >LOGIN WITH FACEBOOK</button>
+          </mat-card-actions>
+          
     </div>
-    <div class="form-group">
-        <label for="username">email</label>
-        <input type="text" formControlName="username" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-            <div *ngIf="f.username.errors.required">Username is required</div>
-        </div>
-</div>
-    <div class="form-group">
-        <label for="password">password</label>
-        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-            <div *ngIf="f.password.errors.required">Password is required</div>
-            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
-        
-        </div>  
-    </div>
-
-    <div class="form-group">
-        <label>Confirm Password</label>
-        <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
-        <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
-            <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
-            <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="mobilenumber">Mobile Nmber</label>
-        <input type="mobilenumber" formControlName="mobilenumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobilenumber.errors }" />
-        <div *ngIf="submitted && f.mobilenumber.errors" class="invalid-feedback">
-            <div *ngIf="f.mobilenumber.errors.required">Mobile Number is required</div>
-            <div *ngIf="f.mobilenumber.errors.maxlength">Password must be 10 characters</div>
-        
-         
-        </div>
-    </div>
-
-    <div class="form-group">
-        <button class="btn btn-primary">
-            Register
-        </button>
-    </div>
-<!-- </form> -->
+        </div>   
+    </form>
+  </mat-card-content>
+</mat-card>
