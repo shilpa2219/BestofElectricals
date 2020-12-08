@@ -13,13 +13,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
 import { FooterComponent } from './footer/footer.component';
 import { RecaptchaModule } from 'ng-recaptcha';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     RegisterComponent,
-    FooterComponent
+    FooterComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
